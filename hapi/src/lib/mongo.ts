@@ -12,7 +12,7 @@ export default Object.freeze<Hapi.Plugin<void>>({
     const usr = "db_user";
     const pwd = "12345";
     const options: hapiMongo.Options = {
-      url: `mongodb+srv://${usr}:${pwd}@edit-backend-jan-2023.iahzmxi.mongodb.net/sample_mflix?retryWrites=true&w=majority`,
+      url: `mongodb+srv://${usr}:${pwd}@edit-backend-jan-2023.iahzmxi.mongodb.net/final_project?retryWrites=true&w=majority`,
       settings: { useUnifiedTopology: true },
       decorate: true,
     };
