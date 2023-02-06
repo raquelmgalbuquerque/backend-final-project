@@ -19,11 +19,14 @@ const getAllTodos = Object.freeze<ServerRoute>({
   handler: (req, _h) => {
     // get data from request
     const { mongo } = req;
-    // const offset = Number(req.query['offset']) ?? 0
-    // const limit = Number(req.query['limit']) ?? 20
+    const offset = Number(req.query["offset"]) ?? 0;
+    const limit = Number(req.query["page-size"]) ?? 5;
+
+    type MySort = -1 | 1;
+    const order: MySort = req.query["order"] ?? 1;
 
     // call handler (request-agnostic)
-    return getAll(mongo);
+    return getAll(mongo, offset, limit, order);
   },
 });
 
@@ -124,8 +127,14 @@ const getSearch = Object.freeze<ServerRoute>({
     const { mongo } = req;
     const description = req.query.description;
 
+    const offset = Number(req.query["offset"]) ?? 0;
+    const limit = Number(req.query["page-size"]) ?? 5;
+
+    type MySort = -1 | 1;
+    const order: MySort = req.query["order"] ?? 1;
+
     // call handler (request-agnostic)
-    return search(mongo, description);
+    return search(mongo, description, offset, limit, order);
   },
 });
 

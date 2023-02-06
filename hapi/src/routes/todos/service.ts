@@ -10,8 +10,21 @@ export const Todo = z.object({
 
 export type Todo = z.infer<typeof Todo>;
 
-export const getAll = (mongo: HapiMongo) =>
-  mongo.db.collection("todos").find({}).toArray();
+type MySort = -1 | 1;
+
+export const getAll = (
+  mongo: HapiMongo,
+  offset: number,
+  limit: number,
+  order: MySort
+) =>
+  mongo.db
+    .collection("todos")
+    .find({})
+    .sort({ dueDate: order })
+    .skip(offset)
+    .limit(limit)
+    .toArray();
 
 export const getOne = (mongo: HapiMongo, id: string) =>
   mongo.db.collection("todos").findOne({ _id: new mongo.ObjectID(id) });
@@ -27,9 +40,17 @@ export const update = (mongo: HapiMongo, id: string, todo: Todo) =>
 export const remove = (mongo: HapiMongo, id: string) =>
   mongo.db.collection("todos").deleteOne({ _id: new mongo.ObjectID(id) });
 
-export const search = (mongo: HapiMongo, query: string) =>
+export const search = (
+  mongo: HapiMongo,
+  query: string,
+  offset: number,
+  limit: number,
+  order: MySort
+) =>
   mongo.db
     .collection("todos")
     .find({ description: { $regex: new RegExp(query, "i") } })
-    .limit(5)
+    .sort({ dueDate: order })
+    .skip(offset)
+    .limit(limit)
     .toArray();
