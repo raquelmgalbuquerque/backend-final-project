@@ -4,9 +4,10 @@ import z from "zod";
 /** Zod schema to validate one object with name and age */
 export const Todo = z.object({
   description: z.string(),
-  // done: z.boolean(),
-  // dueDate: z.date(),
+  done: z.boolean(),
+  dueDate: z.coerce.date(),
 });
+
 export type Todo = z.infer<typeof Todo>;
 
 export const getAll = (mongo: HapiMongo) =>
