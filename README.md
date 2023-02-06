@@ -13,8 +13,8 @@ Build an to do API able to perform CRUD requests, on a group of tasks (todos) st
 - DELETE /api/todos/{id}
 - GET /api/todos/search?description (optional query parameters: "page-size", "offset" and "order". "description" is mandatory! [^2])
 
-[^1]: `/api/todos/?pagesize=x&offset=y`
-[^2]: `/api/todos/search?description=abc&order=dueDate`
+[^1]: e.g. `http://localhost:3000/api/todos?page-size=4&offset=0&order=-1`
+[^2]: e.g. `http://localhost:3000/api/todos/search?description=dog&page-size=2&offset=0&order=-1`
 
 ### Payload examples
 
