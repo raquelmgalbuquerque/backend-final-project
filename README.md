@@ -1,6 +1,6 @@
 # Backend final project
 
-This project makes use of an API template, developed by Gerardo Lima, available at [this repository](https://github.com/gerardolima/edit-2023-jan).
+This project was done my João Martinho and Raquel Albuquerque and makes use of an API template, developed by Gerardo Lima, available at [this repository](https://github.com/gerardolima/edit-2023-jan).
 
 ## Goal
 
@@ -15,6 +15,29 @@ Build an to do API able to perform CRUD requests, on a group of tasks (todos) st
 
 [^1]: `/api/todos/?pagesize=x&offset=y`
 [^2]: `/api/todos/search?description=abc&order=dueDate`
+
+### Payload examples
+
+#### POST /api/todos/
+
+```
+{
+  "description": "Do the laundry",
+  "done": true,
+  "dueDate": "2023-02-12T12:00:00.000Z"
+}
+```
+
+#### PUT /api/todos/{id}
+
+```
+{
+  "_id": "63e1586aa05d59072eb26cf7",
+  "description": "Teste 2",
+  "done": true,
+  "dueDate": "2023-02-10T21:00:00.000+00:00"
+}
+```
 
 ## MongoDB document format
 
