@@ -1,4 +1,5 @@
 import type { ServerRoute, Request } from "@hapi/hapi";
+import z from "zod";
 import {
   Todo,
   getAll,
@@ -122,6 +123,11 @@ const deleteTodo = Object.freeze<ServerRoute>({
 const getSearch = Object.freeze<ServerRoute>({
   method: "GET",
   path: "/search",
+  options: {
+    validate: {
+      query: (v: unknown) => Description.parseAsync(v),
+    },
+  },
   handler: async (req, _h) => {
     // get data from request
     const { mongo } = req;
@@ -137,6 +143,12 @@ const getSearch = Object.freeze<ServerRoute>({
     return search(mongo, description, offset, limit, order);
   },
 });
+
+/** Zod schema to validate one object with description */
+const Description = z.object({
+  description: z.string(),
+});
+type Description = z.infer<typeof Description>;
 
 /**
  * Routes of the plugin `hello`
