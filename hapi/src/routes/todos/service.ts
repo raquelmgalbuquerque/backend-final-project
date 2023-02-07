@@ -3,7 +3,7 @@ import z from "zod";
 
 /** Zod schema to validate one object with name and age */
 export const Todo = z.object({
-  description: z.string().min(2).max(20),
+  description: z.string().min(2).max(50),
   done: z.boolean(),
   dueDate: z.coerce.date(),
 });
