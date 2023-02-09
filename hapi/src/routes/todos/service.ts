@@ -54,3 +54,20 @@ export const search = (
     .skip(offset)
     .limit(limit)
     .toArray();
+
+// mongo.db
+//   .collection("todos")
+//   .aggregate([
+//     {
+//       $searchBeta: {
+//         search: {
+//           query: query,
+//           path: "description",
+//         },
+//       },
+//     },
+//     { $sort: { dueDate: order } },
+//     { $limit: limit },
+//     { $skip: offset },
+//   ])
+//   .toArray();
