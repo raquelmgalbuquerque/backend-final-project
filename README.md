@@ -77,7 +77,7 @@ Since during the classes we already created the project _edit-backend-jan-2023_ 
 
 ### Document format
 
-The documents stored at MongoDB collection _todo_ should have the following format:
+The documents stored at MongoDB collection _todos_ should have the following format:
 
 ```
 {
@@ -100,7 +100,7 @@ We performed the tests of the routes with the file `routes.spec.ts`.
 
 - app.ts: where we define the port and start the server;
 - server.ts: where the plugins are registered;
-- routes/todos/index.ts: the route is registered;
+- routes/todos/index.ts: the routes are registered;
 - routes/todos/routes.ts: where the routes are defined and the service is called;
 - routes/todos/service.ts: where all the business logic can be found.
 
@@ -111,9 +111,10 @@ The routes are responsible for reading the request, make the validation, call th
 - `src/lib`: here we can find transversal code of our API. For example, here is where we provide all the necessary code to connect to MongoDB Atlas. This way, we do not need to duplicate it every time we create a new plugin.
 - `src/routes`: all the API routes can be found here and they are organized by subject. For this exercise, all the todo related routes can be found at `src/routes/todos`. The entry point is the `index.ts` file followed by `routes.ts` and `service.ts`. The remaining files ending with `*.spec.ts` are test files for the routes and the service.
 
-### Main struggles and solutions
+## Main struggles and solutions
 
 - Validation with [Zod](https://zod.dev/) when implementing routes (mainly with date objects). An upgrade of the package solved the issue;
+- We found problems while trying to make `description` parameter mandatory in route with search, so we left it optional due to the lack of time;
 - Tests: we didn't know where to begin, so we started by following each line of the test file `routes.spec.ts` along with [Jest](https://jestjs.io/), [hapi](https://hapi.dev/) and [chance](https://chancejs.com/) documentation, as well as comparing with examples we did with Gerardo during the lectures;
 - How can we isolate tests only for `todos` plugin? When running the command `npm run test:w`, click on p-key and they type `/routes/todos`.
 
@@ -136,7 +137,8 @@ Explain in 30 minutes, at most, the code we did, namely problems found and corre
 6. (Raquel) Code flow: routes/todos/service.ts
 7. (Raquel) Run API in VS Code and demo in Postman: 3 routes (getAllTodos, getOneTodo, postTodo)
 8. (João) Demo in Postman: 3 routes (putTodo, deleteTodo, getSearch)
-9. (Raquel) Tests: we only performed tests for the routes. Do the demo with the command.
+9. (Raquel) Tests: we only performed tests for the routes. Do the demo with the command `npm run test:w`
+10. Main struggles and solutions
 
 ## Useful commands
 
