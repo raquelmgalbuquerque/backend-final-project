@@ -1,6 +1,6 @@
 # Backend final project
 
-This project was done by [João Martinho](https://github.com/3ntix) and [Raquel Albuquerque]https://github.com/raquelmgalbuquerque) and makes use of an API template, developed by [Gerardo Lima](https://github.com/gerardolima), available at [this repository](https://github.com/gerardolima/edit-2023-jan).
+This project was done by [João Martinho](https://github.com/3ntix) and [Raquel Albuquerque](https://github.com/raquelmgalbuquerque) and makes use of an API template, developed by [Gerardo Lima](https://github.com/gerardolima), available at [this repository](https://github.com/gerardolima/edit-2023-jan).
 
 ## Goal
 
