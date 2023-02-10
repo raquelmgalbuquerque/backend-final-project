@@ -1,7 +1,7 @@
 import type { HapiMongo } from "hapi-mongodb";
 import z from "zod";
 
-/** Zod schema to validate one object with name and age */
+/** Zod schema to validate one object with description, done and dueDate keys */
 export const Todo = z.object({
   description: z.string().min(2).max(50),
   done: z.boolean(),
@@ -67,7 +67,7 @@ export const search = (
 //       },
 //     },
 //     { $sort: { dueDate: order } },
-//     { $limit: limit },
 //     { $skip: offset },
+//     { $limit: limit },
 //   ])
 //   .toArray();
