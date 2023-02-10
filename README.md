@@ -1,6 +1,6 @@
 # Backend final project
 
-This project was done by João Martinho and Raquel Albuquerque and makes use of an API template, developed by Gerardo Lima, available at [this repository](https://github.com/gerardolima/edit-2023-jan).
+This project was done by [João Martinho](https://github.com/3ntix) and [Raquel Albuquerque]https://github.com/raquelmgalbuquerque) and makes use of an API template, developed by [Gerardo Lima](https://github.com/gerardolima), available at [this repository](https://github.com/gerardolima/edit-2023-jan).
 
 ## Goal
 
@@ -16,7 +16,7 @@ Build a todo API able to perform CRUD (Create &rarr; POST, Read &rarr; GET, Upda
 [^1]: e.g. `http://localhost:3000/api/todos?page-size=4&offset=0&order=-1`
 [^2]: e.g. `http://localhost:3000/api/todos/search?description=dog&page-size=2&offset=0&order=-1`
 
-## Examples to test at Postman
+## Examples to test on Postman
 
 [Postman](https://www.postman.com/) enables a user to test requests without the need of a front-end. Here we give examples of the URLs (Uniform Resource Locators) tested. They can be composed by:
 
