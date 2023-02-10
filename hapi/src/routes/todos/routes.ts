@@ -123,11 +123,11 @@ const deleteTodo = Object.freeze<ServerRoute>({
 const getSearch = Object.freeze<ServerRoute>({
   method: "GET",
   path: "/search",
-  options: {
-    validate: {
-      query: (v: unknown) => Description.parseAsync(v),
-    },
-  },
+  // options: {
+  //   validate: {
+  //     query: (v: unknown) => Description.parseAsync(v),
+  //   },
+  // },
   handler: async (req, _h) => {
     // get data from request
     const { mongo } = req;
@@ -145,10 +145,10 @@ const getSearch = Object.freeze<ServerRoute>({
 });
 
 /** Zod schema to validate one object with description */
-const Description = z.object({
-  description: z.string(),
-});
-type Description = z.infer<typeof Description>;
+// const Description = z.object({
+//   description: z.string(),
+// });
+// type Description = z.infer<typeof Description>;
 
 /**
  * Routes of the plugin `hello`
